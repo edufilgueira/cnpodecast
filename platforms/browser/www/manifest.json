@@ -1,0 +1,18 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "cnpodcast",
+  "short_name": "cnpodcast",
+  "version": "br.com.cn",
+  "description": "Este podecast foi dedicado ao Pr. Fabricio que tem nos abençoado com sua vida, e por causa disso decidimos criar um podecast app  para abençoar pessoas em todo mundo com suas mensagens.",
+  "author": "Eduardo Filgueira",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "orientation": "any",
+  "start_url": "index.html"
+}

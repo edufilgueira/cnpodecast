@@ -1,0 +1,323 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                          "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>CN Podcast</title>
+	<meta name="description" content="Podcast Comunidade das Nações">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta name="keywords" content="Podcast Comunidade Nações">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:site_name" content="CN Podcast">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://devnaestrada.com.br">
+	<meta property="og:title" content="CN Podcast">
+	<meta property="og:description" content="CN Podcast">
+	<meta property="og:image" content="https://assets.libsyn.com/secure/show/104268/dne-1400.png">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+	
+	<script src="js/jquery-3.3.1.js"></script>
+<!--BOOTSTRAP -->
+	<link rel="stylesheet" href="css/bootstrap-4.1.3/css/bootstrap.css"/>	
+	<script src="css/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+	
+	
+	
+	<link rel="stylesheet" href="./css/main.css">
+	<link href="./css/css.css" rel="stylesheet">
+	
+
+<style>
+.cultar{
+	display: none;
+}
+.exibir{
+	display: block;
+}
+</style>
+
+<script>
+function home(){
+	$("#home").show();
+	$("#detalhe").hide();
+}
+function detalhe(){
+	$("#home").hide();
+	$("#detalhe").show();
+}
+</script>
+</head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a href="https://devnaestrada.com.br/" class="header-brand">
+			<img src="./img/logo.png">
+		</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="#" class="header-nav__link">Comunidades</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" class="header-nav__link">Contato</a>
+			</li>
+			<li class="nav-item">
+				<a class="default-btn" href="#" target="_blank">Cadastro</a>
+			</li>      
+		</ul>
+	  </div>
+	</nav>
+
+
+	<section class="coverphoto">
+		<div class="coverphoto__wrap">
+		  <img class="coverphoto_image" src="./img/so-logo-branca.png" alt="DEVNAESTRADA Símbolo">
+		  <h1 class="coverphoto__title">
+			Podcast Comunidade das Nações
+		  </h1>
+		  <p class="coverphoto__desc">Toda semana um novo maná sobre o reino de Deus.</p>
+	  </div>
+	</section>
+
+<div id="home">
+    <main class="main">
+		<div class="container">
+			<div id="search-form" class="search-form">
+			  <input type="text" placeholder="Buscar episódio" id="search-input" class="input">
+			  <i class="fa fa-search" id="search-icon"></i>
+			  <ul class="search-results search-list"></ul>
+			</div>
+			<article class="episode">
+				<div class="episode-holder">
+					<a href="javascript: void(0);" onclick="detalhe()">
+						<img class="episode-artwork" src="img/capa01.jpg">
+					</a>
+					<span class="episode__number">DEVNAESTRADA</span>
+					<a href="javascript: void(0);" onclick="detalhe()" class="episode-link">
+						<h1 class="episode-title">DevHealthy 04: dudao</h1>
+					</a>
+					<p class="episode-description">
+						Conheça a história do Lucas, que passou por um período digamos, não tão saudável mas que felizmente conseguiu sair dessa situação!
+					</p>
+				</div>
+			</article>
+			<!-- Pagination links
+			<div class="pagination">
+				<a href="https://devnaestrada.com.br/podcast/2/" class="btn">Mais antigos</a>
+			</div> -->
+		</div>
+    </main>
+</div>
+<div id="detalhe">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>	
+
+
+
+
+    <footer>
+	<div class="container">
+		<a class="profile" href="https://twitter.com/femontanha" target="_blank">
+			<figure class="profile__image profile__image--femontanha"></figure>
+			<div class="profile__info">
+				<span class="profile__name">Fellipe Azambuja</span>
+				<span class="profile__role">Host &amp; Front-end Developer</span>
+				<span class="profile__twitter">@femontanha</span>
+			</div>
+		</a>
+		<a class="profile" href="https://twitter.com/raymonsanches" target="_blank">
+			<figure class="profile__image profile__image--raymon"></figure>
+			<div class="profile__info">
+				<span class="profile__name">Ramon Sanches</span>
+				<span class="profile__role">Co-Host &amp; Senior PHP Developer</span>
+				<span class="profile__twitter">@raymonsanches</span>
+			</div>
+		</a>
+		<a class="profile" href="https://twitter.com/eduardojmatos" target="_blank">
+			<figure class="profile__image profile__image--edu"></figure>
+			<div class="profile__info">
+				<span class="profile__name">Eduardo Matos</span>
+				<span class="profile__role">FullStack Developer</span>
+				<span class="profile__twitter">@eduardojmatos</span>
+			</div>
+		</a>
+	</div>
+</footer>
+
+<a href="javascript: void(0);" class="btn large" onclick="playAudio('https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3');">Play Audio</a>
+<a href="javascript: void(0);" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
+<a href="javascript: void(0);" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
+<p id="audio_position">00:00:00</p>
+<p id="audio_duration">00:00:00</p>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+	  <script type="text/javascript" charset="utf-8">
+
+        // Wait for PhoneGap to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // PhoneGap is ready
+        //
+        function onDeviceReady() {
+            getTimeReal("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
+        }
+		
+        // Audio player
+        //
+        var my_media = null;
+        var mediaTimer = null;
+		var volume = 0;
+
+		function getTimeReal(src) {
+			if (my_media == null) {
+                // Create Media object from src
+                // Create Media object from src
+                my_media = new Media(src, onSuccess, onError);
+            }
+			
+			my_media.play();
+			volume = my_media.getVolume;
+			my_media.setVolume(0);
+
+			if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > 0) {
+                                setAudioPosition(secsToMins(position));
+								setAudioDuration(secsToMins(my_media.getDuration()));
+								clearInterval(mediaTimer);
+								my_media.setVolume(1);
+								stopAudio();
+                            }
+                        }
+                    );
+                }, 100);
+            }
+        }
+
+
+		
+        // Play audio
+        //
+        function playAudio(src) {
+		
+            if (my_media == null) {
+                // Create Media object from src
+                my_media = new Media(src, onSuccess, onError);
+            } // else play current audio
+            // Play audio
+            my_media.play();
+			
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition(secsToMins(position));
+								setAudioDuration(secsToMins(my_media.getDuration()));
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
+        }
+		
+
+		function secsToMins(secs){
+			var hours = Math.floor(secs / (60 * 60));
+			var divisor_for_minutes = secs % (60 * 60);
+			var minutes = Math.floor(divisor_for_minutes / 60);
+			var divisor_for_seconds = divisor_for_minutes % 60;
+			var seconds = Math.ceil(divisor_for_seconds);
+			
+			hours = (hours < 10) ? "0" + hours : hours;
+			minutes = (minutes < 10) ? "0" + minutes : minutes;
+			seconds = (seconds < 10) ? "0" + seconds : seconds;
+	
+			return hours + ":" +minutes + ":" + seconds; 
+		}	
+
+        // Pause audio
+        // 
+        function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        // 
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+
+        // onSuccess Callback
+        //
+        function onSuccess() {
+            console.log("playAudio():Audio Success");
+        }
+
+        // onError Callback 
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' + 
+                  'message: ' + error.message + '\n');
+        }
+
+        // Set audio position
+        // 
+        function setAudioPosition(position) {
+            document.getElementById('audio_position').innerHTML = position;
+        }
+		
+		function setAudioDuration(position) {
+            document.getElementById('audio_duration').innerHTML = position;
+        }
+
+</script>
+	
+		
+
+</body>
+</html>
