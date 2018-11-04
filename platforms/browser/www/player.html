@@ -338,7 +338,7 @@ $('#audio-progress-handles').draggable({
 
 	// Wait for PhoneGap to load
 	//
-	//document.addEventListener("deviceready", onDeviceReady, false);
+	document.addEventListener("deviceready", onDeviceReady, false);
 	document.getElementById("play-player").addEventListener("click", onPlay);
 	document.getElementById("pause-player").addEventListener("click", pauseAudio);
 	document.getElementById("skip-thirty-player").addEventListener("click", skipSecond);
@@ -368,7 +368,8 @@ $('#audio-progress-handles').draggable({
 	// PhoneGap is ready
 	//
 	function onDeviceReady() {
-		getTimeReal("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
+		//getTimeReal("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
+		onPlay();
 	}
 	
 	function onPlay() {
@@ -413,10 +414,11 @@ $('#audio-progress-handles').draggable({
 					// success callback
 					function(position) {
 						if (position > 0) {
+							setAudioPosition(secsToMins(position));
 							setAudioDuration(secsToMins(my_media.getDuration()));
 							clearInterval(mediaTimer);
-							stopAudio();
 							my_media.setVolume(1);
+							stopAudio();
 						}
 					}
 				);
