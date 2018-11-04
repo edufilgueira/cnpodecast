@@ -2038,18 +2038,7 @@
   display: inline-block;
   text-decoration: none; }
 
-.btn {
-  background-color: #3CD52E;
-  color: #FFF;
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 0.8em 1.2em;
-  box-sizing: border-box;
-  border-radius: 3px;
-  border: 0;
-  text-align: center;
-  text-decoration: none; }
+
 
 .btn--small {
   font-size: 14px;
@@ -2061,7 +2050,7 @@
   .btn:hover, .btn:focus,
   .default-btn:hover,
   .default-btn:focus {
-    background-color: #35c728;
+    background-color: #d4d4d4;
     text-decoration: none; }
 
 header {
@@ -2221,8 +2210,8 @@ footer {
   color: #FFF; }
 
 .coverphoto {
-  align-items: center;
-  display: flex;
+  /*align-items: center;
+  display: flex;*/
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -2231,7 +2220,8 @@ footer {
   background-position: center right;
   background-repeat: repeat;
   background-size: cover;
-  height: 300px; }
+  height: 48px;
+  padding: 7px; }
 
 .coverphoto__wrap {
   box-sizing: border-box;

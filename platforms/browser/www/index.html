@@ -24,14 +24,15 @@
 	<meta property="og:image:height" content="300">
 	
 	<script src="js/jquery-3.3.1.js"></script>
-<!--BOOTSTRAP -->
+	<!--BOOTSTRAP -->
 	<link rel="stylesheet" href="css/bootstrap-4.1.3/css/bootstrap.css"/>	
-	<script src="css/bootstrap-4.1.3/js/bootstrap.min.js"></script>
-	
-	
-	
+	<script src="css/bootstrap-4.1.3/js/bootstrap.min.js"></script>	
 	<link rel="stylesheet" href="./css/main.css">
 	<link href="./css/css.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/custom-player-bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
 	
 
 <style>
@@ -43,18 +44,79 @@
 }
 </style>
 
-<script>
-function home(){
-	$("#home").show();
-	$("#detalhe").hide();
+<style>
+/** Customizable Style **/
+.container-fluid {
+  position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-function detalhe(){
-	$("#home").hide();
-	$("#detalhe").show();
+.logo {
+    /*background: url("//assets.libsyn.com/player_logo/104268?theme=custom") no-repeat center !important;*/
 }
-</script>
+
+.nopadding svg {
+  fill:#3CD52E !important;
+}
+.duration, .close-overlay:after, .playlist-item.current .playlist-item-title, .playlist-item.current .playlist-item-duration, .playlist-item.current .playlist-item-date, .playlist-item.current .playlist-item-info-link, a, a:hover, a:visited, a:focus {
+  color: #3CD52E ;
+  text-decoration: none;
+}
+
+.play-bar, .loading .sk-rect, .spinner .bounce1, .spinner .bounce2, .spinner .bounce3, .nano > .nano-pane > .nano-slider  {
+  background-color:#3CD52E !important;
+}
+
+.playlistItemDescription {
+  height:-25px;
+}
+
+.podcast-title {
+  color:grey;
+}
+
+.audio-progress {
+  height: .5rem;
+  width: 100%;
+  background-color: #C0C0C0;
+}
+.audio-progress .bar {
+  height: 100%;
+  background-color: #E95F74;
+}
+
+#audio-progress-handle {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    margin-top: -4px;
+    margin-left: -5px;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #D3D5DF;
+    border-top-color: #D3D5DF;
+    border-right-color: #D3D5DF;
+    transform: rotate(45deg);
+    border-radius: 100%;
+    background-color: #57d142;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.draggable {
+  float: left; margin: 0 10px 10px 0;
+}
+
+
+
+
+</style>
+
+
 </head>
-  <body>
+<body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a href="https://devnaestrada.com.br/" class="header-brand">
 			<img src="./img/logo.png">
@@ -77,67 +139,38 @@ function detalhe(){
 		</ul>
 	  </div>
 	</nav>
-
-
+	
 	<section class="coverphoto">
-		<div class="coverphoto__wrap">
-		  <img class="coverphoto_image" src="./img/so-logo-branca.png" alt="DEVNAESTRADA Símbolo">
-		  <h1 class="coverphoto__title">
-			Podcast Comunidade das Nações
-		  </h1>
-		  <p class="coverphoto__desc">Toda semana um novo maná sobre o reino de Deus.</p>
-	  </div>
+			<input type="text" class="form-control" placeholder="Pesquisar mensagens" style="width:calc(100% - 126px);float:left;font-size: 10px;">
+			<a class="btn btn-light" style="width:40px;float:left;margin-left:2px;"><span class="glyphicon glyphicon-search"></span></a>
+			<a class="btn btn-light" onclick="listarMensagensImg()" style="width:40px;float:left;margin-left:2px;"><span class="glyphicon glyphicon-th-large"></span></a>
+			<a class="btn btn-light" onclick="listarMensagensTxt()" style="width:40px;float:left;margin-left:2px;"><span class="glyphicon glyphicon-th-list"></span></a>
 	</section>
-
-<div id="home">
+	
     <main class="main">
-		<div class="container">
-			<div id="search-form" class="search-form">
-			  <input type="text" placeholder="Buscar episódio" id="search-input" class="input">
-			  <i class="fa fa-search" id="search-icon"></i>
-			  <ul class="search-results search-list"></ul>
-			</div>
+		<div  id="container" class="container">
+				
 			<article class="episode">
 				<div class="episode-holder">
-					<a href="javascript: void(0);" onclick="detalhe()">
+					<a href="player.html?teste=10">
 						<img class="episode-artwork" src="img/capa01.jpg">
 					</a>
-					<span class="episode__number">DEVNAESTRADA</span>
-					<a href="javascript: void(0);" onclick="detalhe()" class="episode-link">
-						<h1 class="episode-title">DevHealthy 04: dudao</h1>
+					<span class="episode__number">GRAÇA</span>
+					<a href="javascript: void(0);" class="episode-link">
+						<h1 class="episode-title">A ultima palavra vem de Deus</h1>
 					</a>
 					<p class="episode-description">
 						Conheça a história do Lucas, que passou por um período digamos, não tão saudável mas que felizmente conseguiu sair dessa situação!
 					</p>
 				</div>
 			</article>
-			<!-- Pagination links
-			<div class="pagination">
-				<a href="https://devnaestrada.com.br/podcast/2/" class="btn">Mais antigos</a>
-			</div> -->
+
 		</div>
     </main>
-</div>
-<div id="detalhe">
 
 
 
-
-
-
-
-
-
-
-
-
-
-</div>	
-
-
-
-
-    <footer>
+<footer>
 	<div class="container">
 		<a class="profile" href="https://twitter.com/femontanha" target="_blank">
 			<figure class="profile__image profile__image--femontanha"></figure>
@@ -166,158 +199,74 @@ function detalhe(){
 	</div>
 </footer>
 
-<a href="javascript: void(0);" class="btn large" onclick="playAudio('https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3');">Play Audio</a>
-<a href="javascript: void(0);" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
-<a href="javascript: void(0);" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
-<p id="audio_position">00:00:00</p>
-<p id="audio_duration">00:00:00</p>
+ <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
+<!--*****************MENU*************** -->
+<script>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+	listarMensagensImg();
+	function listarMensagensImg(){
+		artigos = "";
+		mensagens = [
+			{id: '1', categoria: 'GRAÇA', titulo: "A ultima palavra vem de Deus", img:'img/capa01.jpg', audio:"https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3", descricao: 'Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor '},
+			{id: '2', categoria: 'GRAÇA', titulo: 'Justiça de Deus', img:'img/capa01.jpg', audio:"https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3", descricao: 'Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor '},
+			{id: '3', categoria: 'GRAÇA', titulo: 'Deus corrige a quem ama', img:'img/capa01.jpg', audio:"https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3", descricao: 'Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor '}
+		];
+		for(i = 0; i < mensagens.length; i++) {
+			
+			artigos += "<article class='episode'>"+
+				"<div class='episode-holder'>"+
+					"<a href='player.html' onclick=setMensagemId("+mensagens[i].id+")>"+
+					"	<img class='episode-artwork' src='"+mensagens[i].img+"'>"+
+					"</a>"+
+					"<span class='episode__number'>"+mensagens[i].categoria+"</span>"+
+					"<a href='player.html' onclick=setMensagemId("+mensagens[i].id+") class='episode-link'>"+
+					"	<h1 class='episode-title'>"+mensagens[i].titulo+"</h1>"+
+					"</a>"+
+					"<p class='episode-description'>"+
+					"	"+mensagens[i].descricao+
+					"</p>"+
+				"</div>"+
+			"</article>";
+		}
+		
+		$('#container').html(artigos);
+	}
 	
-	  <script type="text/javascript" charset="utf-8">
-
-        // Wait for PhoneGap to load
-        //
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        // PhoneGap is ready
-        //
-        function onDeviceReady() {
-            getTimeReal("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
-        }
+	function listarMensagensTxt(){
+		artigos = "";
+		mensagens = [
+			{id: '1', categoria: 'GRAÇA', titulo: 'A ultima palavra vem de Deus', img:'img/capa01.jpg', audio:"https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3", descricao: 'Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor '},
+			{id: '2', categoria: 'GRAÇA', titulo: 'Justiça de Deus', img:'img/capa01.jpg', audio:"https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3", descricao: 'Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor '},
+			{id: '3', categoria: 'GRAÇA', titulo: 'Deus corrige a quem ama', img:'img/capa01.jpg', audio:"https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3", descricao: 'Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor Lorem impsu dollor '}
+		];
 		
-        // Audio player
-        //
-        var my_media = null;
-        var mediaTimer = null;
-		var volume = 0;
-
-		function getTimeReal(src) {
-			if (my_media == null) {
-                // Create Media object from src
-                // Create Media object from src
-                my_media = new Media(src, onSuccess, onError);
-            }
+		artigos = '<table class="table">'+
+		'  <thead class="thead-light">'+
+		'    <tr>'+
+		'      <th scope="col">Tuítulo</th>'+
+		'      <th scope="col">Clas</th>'+
+		'    </tr>'+
+		'  </thead>';		
+		for(i = 0; i < mensagens.length; i++) {
+			artigos += '  <tbody>'+
+			'<tr>'+
+			'      <td>'+mensagens[i].titulo+'</td>'+
+			'      <td>'+mensagens[i].categoria+'</td>'+
+			'</tr>';
+		}
+		artigos += 	'</table>';
 			
-			my_media.play();
-			volume = my_media.getVolume;
-			my_media.setVolume(0);
-
-			if (mediaTimer == null) {
-                mediaTimer = setInterval(function() {
-                    // get my_media position
-                    my_media.getCurrentPosition(
-                        // success callback
-                        function(position) {
-                            if (position > 0) {
-                                setAudioPosition(secsToMins(position));
-								setAudioDuration(secsToMins(my_media.getDuration()));
-								clearInterval(mediaTimer);
-								my_media.setVolume(1);
-								stopAudio();
-                            }
-                        }
-                    );
-                }, 100);
-            }
-        }
-
-
-		
-        // Play audio
-        //
-        function playAudio(src) {
-		
-            if (my_media == null) {
-                // Create Media object from src
-                my_media = new Media(src, onSuccess, onError);
-            } // else play current audio
-            // Play audio
-            my_media.play();
-			
-            // Update my_media position every second
-            if (mediaTimer == null) {
-                mediaTimer = setInterval(function() {
-                    // get my_media position
-                    my_media.getCurrentPosition(
-                        // success callback
-                        function(position) {
-                            if (position > -1) {
-                                setAudioPosition(secsToMins(position));
-								setAudioDuration(secsToMins(my_media.getDuration()));
-                            }
-                        },
-                        // error callback
-                        function(e) {
-                            console.log("Error getting pos=" + e);
-                            setAudioPosition("Error: " + e);
-                        }
-                    );
-                }, 1000);
-            }
-        }
-		
-
-		function secsToMins(secs){
-			var hours = Math.floor(secs / (60 * 60));
-			var divisor_for_minutes = secs % (60 * 60);
-			var minutes = Math.floor(divisor_for_minutes / 60);
-			var divisor_for_seconds = divisor_for_minutes % 60;
-			var seconds = Math.ceil(divisor_for_seconds);
-			
-			hours = (hours < 10) ? "0" + hours : hours;
-			minutes = (minutes < 10) ? "0" + minutes : minutes;
-			seconds = (seconds < 10) ? "0" + seconds : seconds;
+		$('#container').html(artigos);
+	}
 	
-			return hours + ":" +minutes + ":" + seconds; 
-		}	
-
-        // Pause audio
-        // 
-        function pauseAudio() {
-            if (my_media) {
-                my_media.pause();
-            }
-        }
-
-        // Stop audio
-        // 
-        function stopAudio() {
-            if (my_media) {
-                my_media.stop();
-            }
-            clearInterval(mediaTimer);
-            mediaTimer = null;
-        }
-
-        // onSuccess Callback
-        //
-        function onSuccess() {
-            console.log("playAudio():Audio Success");
-        }
-
-        // onError Callback 
-        //
-        function onError(error) {
-            alert('code: '    + error.code    + '\n' + 
-                  'message: ' + error.message + '\n');
-        }
-
-        // Set audio position
-        // 
-        function setAudioPosition(position) {
-            document.getElementById('audio_position').innerHTML = position;
-        }
-		
-		function setAudioDuration(position) {
-            document.getElementById('audio_duration').innerHTML = position;
-        }
+	function setMensagemJson(id, categoria, titulo, img, audio, descricao){
+		window.localStorage["id"] = id;
+	}
 
 </script>
-	
-		
+
 
 </body>
 </html>
