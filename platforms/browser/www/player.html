@@ -312,7 +312,7 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 
-<script type="text/javascript" charset="utf-8">	
+<script>	
 //https://codepen.io/anon/pen/bmXGJm
 
 
@@ -376,8 +376,6 @@ $('#audio-progress-handles').draggable({
 	}
 	function onPlay() {
 		id = window.localStorage["id"];
-
-		console.log("pegando id:"+id);
 
 		$('.play').attr("style", "display:none");
 		$('.pause').attr("style", "display:block");
