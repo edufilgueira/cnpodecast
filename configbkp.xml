@@ -1,8 +1,13 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.cn" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+		<?xml version="1.0" encoding="UTF-8"?>
+		<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		xmlns:android = "http://schemas.android.com/apk/res/android"
+		id        = "br.com.cn"
+		versionCode=""
+		version   = "1.0.0">
 		<name>cnpodcast</name>
 		<description>Este podecast foi dedicado ao Pr. Fabricio que tem nos abençoado com sua vida, e por causa disso decidimos criar um podecast app  para abençoar pessoas em todo mundo com suas mensagens.		</description>
-		<author href="http://phonegap.com" email="edufilgueira@gmail.com">Eduardo Filgueira</author>
+		<author href="http://phonegap.com" email="edufilgueira@gmail.com">Eduardo Filgueira		</author>
 		<feature name="http://api.phonegap.com/1.0/battery" />
 		<feature name="http://api.phonegap.com/1.0/camera" />
 		<feature name="http://api.phonegap.com/1.0/contacts" />
@@ -120,4 +125,4 @@
 		<platform name="ios" >
 		<allow-intent href="itms-apps:*" />
 		</platform>
-</widget>
+		</widget>
