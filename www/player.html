@@ -264,7 +264,7 @@
 					</div>
 				</article>
 <br>
-<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-download-alt"></span> Download</button>
+<button type="button" class="btn btn-success" onclick="onPlay2()"><span class="glyphicon glyphicon-download-alt"></span> Download</button>
 <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-share"></span> Compartilhar</button>
 			
 		
@@ -378,6 +378,13 @@ $('#audio-progress-handles').draggable({
 		playAudio("http://192.168.0.24/cnpodcast/www/media/audio/1.mp3");
 	}
 	
+	function onPlay2() {
+		$('.play').attr("style", "display:none");
+		$('.pause').attr("style", "display:block");
+		playAudio("media/audio/1.mp3");
+		//playAudio("http://192.168.0.24/cnpodcast/www/media/audio/1.mp3");
+	}
+	
 	function onLoadingOn() {
 		$('.play').attr("style", "display:none");
 		$('.pause').attr("style", "display:none");
@@ -437,7 +444,7 @@ $('#audio-progress-handles').draggable({
 		} // else play current audio
 		// Play audio
 		my_media.play();
-		
+		console.log("edu"+JSON.stringify(my_media));
 		// Update my_media position every second
 		if (mediaTimer == null) {
 			mediaTimer = setInterval(function() {
