@@ -364,7 +364,6 @@ $('#audio-progress-handles').draggable({
 		console.log('%:'+ ((widthclicked / curSeekWidth) * 100).toFixed() );
 	});
 
-
 	// PhoneGap is ready
 	//
 	function onDeviceReady() {
@@ -375,7 +374,8 @@ $('#audio-progress-handles').draggable({
 	function onPlay() {
 		$('.play').attr("style", "display:none");
 		$('.pause').attr("style", "display:block");
-		playAudio("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
+		//playAudio("/media/audio/1.mp3");
+		playAudio("http://192.168.0.24/cnpodcast/www/media/audio/1.mp3");
 	}
 	
 	function onLoadingOn() {
