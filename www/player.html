@@ -200,7 +200,7 @@
 				</p>
 			</div>
 			<div class="episode-title nopadding">Dificio de convencer Dificio de ...</div>
-			<div class="seek-bar nopadding">   
+			<div id="seek-bar" class="seek-bar nopadding">   
 				<div class="play-bar" tabindex="0" role="slider"></div>             
 			</div>		
 		</td>
@@ -340,35 +340,26 @@ $('#audio-progress-handles').draggable({
 	//
 	//document.addEventListener("deviceready", onDeviceReady, false);
 	document.getElementById("play-player").addEventListener("click", onPlay);
+	document.getElementById("seek-bar").addEventListener("click", function(e) {
+		var widthclicked = e.pageX - $(this).offset().left.toFixed();
+		var curSeekWidth = $(this).width();
+		var seekPercentage = ((widthclicked / curSeekWidth) * 100).toFixed();
+		var seekPercentage2 = (widthclicked / curSeekWidth);
+		console.log(widthclicked / curSeekWidth);
+		$(".play-bar").width(seekPercentage + "%");
+		setSecond(seekPercentage2,duracao);
+		//setSecond(seekPercentage2, duracao)
+		//alert(seekPercentage2*duracao);
+	});
+	
 	document.getElementById("pause-player").addEventListener("click", pauseAudio);
 	document.getElementById("skip-thirty-player").addEventListener("click", skipSecond);
 	document.getElementById("back-thirty-player").addEventListener("click", backSecond);
 	
-	
-
-	
-	$(".seek-bar").on("click", function(e) {
-		//to get part of width of progress bar clicked
-		var widthclicked = e.pageX - $(this).offset().left.toFixed();
-		var curSeekWidth = $(this).width();
-		var seekPercentage = ((widthclicked / curSeekWidth) * 100).toFixed();
-		//var curDuration = playList[currentTrack].duration_seconds;
-		//var audioSeekInSeconds = ((seekPercentage / 100) * curDuration).toFixed();
-		$(".play-bar").width(seekPercentage + "%");
-		//currentTimeStart = audioSeekInSeconds;
-		//player.currentTime = currentTimeStart;
-		console.log('e.pageX:'+e.pageX);
-		console.log('$(this).offset().left.toFixed():'+$(this).offset().left.toFixed());
-		console.log('widthclicked:'+widthclicked);
-		console.log('curSeekWidth:'+curSeekWidth );
-		console.log('%:'+ ((widthclicked / curSeekWidth) * 100).toFixed() );
-	});
-
 	// PhoneGap is ready
 	//
 	function onDeviceReady() {
-		//getTimeReal("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
-		onPlay();
+		getTimeReal("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
 	}
 	
 	function onPlay() {
@@ -407,6 +398,8 @@ $('#audio-progress-handles').draggable({
 	var my_media = null;
 	var mediaTimer = null;
 	var volume = 0;
+	var posicao = 0;
+	var duracao = 0;
 
 	function getTimeReal(src) {
 		if (my_media == null) {
@@ -438,6 +431,7 @@ $('#audio-progress-handles').draggable({
 		}
 	}
 	
+
 	// Play audio
 	//
 	function playAudio(src) {
@@ -458,6 +452,9 @@ $('#audio-progress-handles').draggable({
 					// success callback
 					function(position) {
 						if (position > 0) {
+							posicao = position;
+							duracao = my_media.getDuration();
+							calculoBarraProgresso(position, duracao);
 							setAudioPosition(secsToMins(position));
 							setAudioDuration(secsToMins(my_media.getDuration()));
 							
@@ -476,6 +473,52 @@ $('#audio-progress-handles').draggable({
 			}, 1000);
 		}
 	}
+	
+	function calculoBarraProgresso(position, duracao){
+		resultado = (position/duracao)*100;
+		$(".play-bar").width(resultado + "%");
+	}
+	
+	//$(".seek-bar").on("click", function(e) {
+	function teste(){
+		console.log("sdfsdf");
+		//to get part of width of progress bar clicked
+		var widthclicked = e.pageX - $(this).offset().left.toFixed();
+		var curSeekWidth = $(this).width();
+		var seekPercentage = ((widthclicked / curSeekWidth) * 100).toFixed();
+		var seekPercentage2 = ((widthclicked / curSeekWidth)).toFixed();
+		//var curDuration = playList[currentTrack].duration_seconds;
+		//var audioSeekInSeconds = ((seekPercentage / 100) * curDuration).toFixed();
+		$(".play-bar").width(seekPercentage + "%");
+		setSecond(seekPercentage2,duracao);
+		//currentTimeStart = audioSeekInSeconds;
+		//player.currentTime = currentTimeStart;
+		console.log('e.pageX:'+e.pageX);
+		console.log('$(this).offset().left.toFixed():'+$(this).offset().left.toFixed());
+		console.log('widthclicked:'+widthclicked);
+		console.log('curSeekWidth:'+curSeekWidth );
+		console.log('%:'+ ((widthclicked / curSeekWidth) * 100).toFixed() );
+	//});
+	}
+	
+	// 
+	function setSecond(posicaoAtual, duracaototal) {
+		total = posicaoAtual*duracaototal;
+
+		if (my_media != null) {
+			my_media.getCurrentPosition(
+				// success callback
+				function(position) {
+					if (position > -1) {
+						total = posicaoAtual*duracaototal;
+						my_media.seekTo(total*1000);
+					}
+				}
+			);
+		}
+	}
+	
+
 
 	// adianta 30 sec
 	//
