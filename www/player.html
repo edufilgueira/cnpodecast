@@ -265,7 +265,7 @@
 				</article>
 <br>
 <button type="button" class="btn btn-success" onclick="onPlay2()"><span class="glyphicon glyphicon-download-alt"></span> Download</button>
-<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-share"></span> Compartilhar</button>
+<button type="button" class="btn btn-warning" onclick="onPlay3()"><span class="glyphicon glyphicon-share"></span> Compartilhar</button>
 			
 		
 		</div>
@@ -374,16 +374,21 @@ $('#audio-progress-handles').draggable({
 	function onPlay() {
 		$('.play').attr("style", "display:none");
 		$('.pause').attr("style", "display:block");
-		//playAudio("/media/audio/1.mp3");
-		playAudio("http://192.168.0.24/cnpodcast/www/media/audio/1.mp3");
+		playAudio("https://traffic.libsyn.com/secure/force-cdn/highwinds/devnaestrada/dvh4-prod.mp3");
 	}
 	
 	function onPlay2() {
 		$('.play').attr("style", "display:none");
 		$('.pause').attr("style", "display:block");
 		playAudio("media/audio/1.mp3");
-		//playAudio("http://192.168.0.24/cnpodcast/www/media/audio/1.mp3");
 	}
+	
+	function onPlay3() {
+		$('.play').attr("style", "display:none");
+		$('.pause').attr("style", "display:block");
+		playAudio("http://181.222.146.173/cnpodcast/www/media/audio/1.mp3");
+	}
+	
 	
 	function onLoadingOn() {
 		$('.play').attr("style", "display:none");
